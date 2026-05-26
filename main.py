@@ -3,18 +3,16 @@ import pickle
 import time
 from PIL import Image
 import os
-from langchain_community.document_loaders import WebBaseLoader
-# from langchain.text_splitter import RecursiveCharacterTextSplitter
-# from langchain.embeddings import HuggingFaceEmbeddings
-# from langchain.vectorstores import FAISS
 import torch
+
 from transformers import pipeline
-from langchain.chains import RetrievalQA
-# Use the loaded pipeline (pipe) with Langchain
-from langchain.llms import HuggingFacePipeline
+
+from langchain_community.document_loaders import WebBaseLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
+from langchain_classic.chains import RetrievalQA
+from langchain_community.llms import HuggingFacePipeline
 # Load FAISS Index (function)
 def load_faiss_index():
     faiss_index_path = "faiss_index"
